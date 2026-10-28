@@ -2,7 +2,7 @@
 
 An interactive 3D model of Manhattan that shows where rainfall collects on the streets, how the ponding grows during a storm, and how that compares with real sensor observations.
 
-**[Methods and limitations](docs/methods.md)** · **[Data sources](DATA_SOURCES.md)** · **[Rights and attribution](RIGHTS.md)**
+**[Open the interactive demo](https://bokaihe.github.io/rain-to-ponding/)** · **[Methods and limitations](docs/methods.md)** · **[Data sources](DATA_SOURCES.md)** · **[Rights and attribution](RIGHTS.md)**
 
 ![Rain to Ponding: storm playback, twice the rainfall, street blocks, a building card and a FloodNet sensor check](docs/demo.webp)
 
@@ -41,9 +41,15 @@ Storm playback reads results computed offline in Python; seeking does not rerun 
 
 The dynamic calculation uses a 5 m grid, with 2 m terrain for close views. Building footprints block surface flow. Drainage is a single assumed capacity of 20 mm/h selected against an official modeled scenario, not fitted to sensor depths.
 
+## Open the demo
+
+**[Launch Rain to Ponding](https://bokaihe.github.io/rain-to-ponding/)**
+
+The website runs directly in your browser. Deployment uses the manually triggered GitHub Pages workflow; changes to this repository do not automatically replace the live version.
+
 ## Try it locally
 
-GitHub Pages has not been enabled yet. This repository is a ready-to-serve static package, not a source-code checkout. After downloading or cloning it, serve the repository folder over HTTP:
+This repository is a ready-to-serve static package, not a source-code checkout. After downloading or cloning it, serve the repository folder over HTTP:
 
 ```bash
 python -m http.server 8000 --bind 127.0.0.1
