@@ -1,0 +1,121 @@
+{
+  "phase": "P4",
+  "terrain": {
+    "fsm_cell_m": 2,
+    "dynamic_cell_m": 5,
+    "overview_cell_m": 10,
+    "near_ground_cell_m": 2,
+    "vertical_datum": "NAVD88",
+    "frame_angle_grid_deg": 28.331
+  },
+  "fsm": {
+    "node_count": 344486,
+    "storage_step_m": 0.01,
+    "threshold_duration_min": 60,
+    "threshold_search_max_mm": 200,
+    "threshold_tolerance_mm": 0.1
+  },
+  "params": {
+    "manning_street": 0.016,
+    "manning_impervious": 0.02,
+    "manning_park": 0.05,
+    "roof_to_sewer": true,
+    "drain_capacity_mmph": 20,
+    "drain_capacity_status": "selected_against_official_modeled_scenario",
+    "drain_candidates_mmph": [
+      0,
+      10,
+      20,
+      30,
+      45
+    ],
+    "infiltration_mmph": 15,
+    "wet_threshold_m": 0.01,
+    "ponding_threshold_m": 0.1,
+    "street_impact_threshold_m": 0.15,
+    "building_height_fallback_m": 12.0,
+    "street_default_width_m": {
+      "1": 10.0,
+      "2": 10.0,
+      "3": 8.0,
+      "other": 6.0
+    }
+  },
+  "exploration_params": {
+    "drainMmH": 20,
+    "infiltrationMmH": 15,
+    "cellAreaM2": 4,
+    "status": "selected_against_official_modeled_scenario"
+  },
+  "validation": {
+    "hec": "mixed_agreement_volume_difference13.35pct",
+    "dep": "selected_against_modeled_scenario_not_observations",
+    "floodnet": "pending_P6"
+  },
+  "limitations": [
+    "building_connectivity",
+    "uniform_rain",
+    "final_state",
+    "simplified_losses",
+    "terrain_age",
+    "no_tides",
+    "5m_extent_grid_sensitive",
+    "roof_diversion_without_surcharge",
+    "display_cutoff_1_or_2cm"
+  ],
+  "sources": [
+    {
+      "id": "noaa",
+      "url": "https://noaa-nos-coastal-lidar-pds.s3.amazonaws.com/dem/NYC_topobathy_hydroEnforced_DEM_2017_9310/"
+    },
+    {
+      "id": "nyc",
+      "url": "https://opendata.cityofnewyork.us/"
+    },
+    {
+      "id": "hierarchy",
+      "url": "https://esurf.copernicus.org/articles/8/431/2020/"
+    },
+    {
+      "id": "fsm",
+      "url": "https://esurf.copernicus.org/articles/9/105/2021/"
+    },
+    {
+      "id": "rain",
+      "url": "https://mesonet.agron.iastate.edu/request/hourlyprecip.phtml"
+    },
+    {
+      "id": "floodnet",
+      "url": "https://www.floodnet.nyc/methodology"
+    },
+    {
+      "id": "floodnet_license",
+      "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    }
+  ],
+  "floodnet_attribution": {
+    "organizations": [
+      "New York University",
+      "City University of New York"
+    ],
+    "license": "CC BY-NC-SA 4.0",
+    "comparison_status": "pending"
+  },
+  "dynamic": {
+    "ready": true,
+    "scope": "whole_manhattan",
+    "scenarios": [
+      "s2",
+      "s1",
+      "ida",
+      "oct30",
+      "s1x15",
+      "s1x2",
+      "s2x15",
+      "s2x2"
+    ],
+    "default_scenario": "s2",
+    "default_minute": 75,
+    "raw_budget_pass": false
+  }
+}
